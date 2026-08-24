@@ -10,7 +10,7 @@ public class RelationalOperator {
         int num2 = 20;
 
         //System.out.println(num != num2);
-
+        // Return boolean value
         //A program that identify if the number is odd or even
         int num3 = 21;
         boolean isEven = num % 2 == 0;
