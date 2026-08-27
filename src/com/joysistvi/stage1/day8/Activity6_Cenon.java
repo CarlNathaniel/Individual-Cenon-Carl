@@ -15,7 +15,6 @@ public class Activity6_Cenon {
 
         boolean isLoggedIn = false;
 
-        maxAttempts++;
 
         do {
             System.out.print("Enter email: ");
@@ -32,16 +31,16 @@ public class Activity6_Cenon {
 
             } else if (!loginEmail.equals(email) && !loginPass.equals(password)) {
                 System.out.println("Incorrect email and password. Please try again.");
-                System.out.println("Attempts remaining: " + (4 - maxAttempts));
+                System.out.println("Attempts remaining: " + (3 - maxAttempts));
             } else if (loginPass.equals(password)) { //Shows when email is incorrect
                 System.out.println("Incorrect email. Please try again.");
-                System.out.println("Attempts remaining: " + (4 - maxAttempts));
+                System.out.println("Attempts remaining: " + (3 - maxAttempts));
             } else if (loginEmail.equals(email)) { //Shows when password is incorrect
                 System.out.println("Incorrect password. Please try again");
-                System.out.println("Attempts remaining: " + (4 - maxAttempts));
+                System.out.println("Attempts remaining: " + (3 - maxAttempts));
             }
 
-            } while (!isLoggedIn && maxAttempts <= 3) ;//Limit the attempts to 3
+            } while (!isLoggedIn && maxAttempts < 3) ;//Limit the attempts to 3
 
             if (!isLoggedIn) {
                 System.out.println("You ran out of attempts.");
