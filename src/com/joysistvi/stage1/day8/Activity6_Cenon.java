@@ -2,7 +2,7 @@ package com.joysistvi.stage1.day8;
 
 import java.util.Scanner;
 
-public class Activity6 {
+public class Activity6_Cenon {
 
     public static void main(String[] args) {
 
