@@ -26,22 +26,37 @@ public class Activity5_Cenon {
             case 2:
                 System.out.print("Enter amount to deposit: ");
                 double depositAmount = input.nextDouble();
-                if (depositAmount <= 0) {
-                    System.out.println("Error");
+                if (depositAmount > 0) {
+
+                    // Nested if
+                    if (depositAmount >= 5000) {
+                        System.out.println("Large deposit detected!");
+                        System.out.println("Deposit successful. New Balance: " + (depositAmount + balance));
+                    } else {
+                        System.out.println("Deposit successful. New Balance: " + (depositAmount + balance));
+                    }
+
                 } else {
-                    System.out.println("Deposit successful. New Balance: " + (depositAmount + balance));
+                    System.out.println("Error");
                 }
+
                 break;
+
             case 3:
                 System.out.print("Enter amount to withdraw: ");
                 double withdrawAmount = input.nextDouble();
-                if (withdrawAmount <= 0) {
-                    System.out.println("Error");
-                } else if (withdrawAmount >= 5001) {
-                    System.out.println("Insufficient Balance. Your Current balance is: " + balance);
+
+                if (withdrawAmount <= 1000000) {
+
+                    if (withdrawAmount <= 0) {
+                        System.out.println("Error");
+                    } else if (withdrawAmount > balance) {
+                        System.out.println("Insufficient Balance");
+                    } else if (withdrawAmount > 0) {
+                        System.out.println("Withdraw Successful. New Balance: " + (balance - withdrawAmount));
+                    }
                 } else {
-                    System.out.println("Withdrawal successful!");
-                    System.out.println("Remaining balance: " + (balance - withdrawAmount));
+                    System.out.println("Invalid Input");
                 }
                 break;
             case 4:
