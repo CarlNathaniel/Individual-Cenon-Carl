@@ -11,47 +11,43 @@ public class Activity6_Cenon {
         String email = "carl@gmail.com";
         String password = "pass123";
 
-        int maxAttempts = 0;
+        int maxAttempts = 3;
 
         boolean isLoggedIn = false;
 
+        System.out.println("=== Log In ===");
+        //                    1 <= 3
+        for (int attempt = 1; attempt <= maxAttempts; attempt++) {
+            System.out.println("Attempt " + attempt + " of " + maxAttempts);
 
-        do {
             System.out.print("Enter email: ");
             String loginEmail = scanner.nextLine();
 
-            System.out.print("Enter password: ");
+            System.out.print("Enter Password: ");
             String loginPass = scanner.nextLine();
 
-            maxAttempts++;// add attempts
+            boolean emailCorrect = loginEmail.equals(email);
+            boolean passCorrect = loginPass.equals(password);
 
-            if (loginEmail.equals(email) && loginPass.equals(password)) {
-                System.out.println("Login Successfully!");
+
+            if (emailCorrect && passCorrect) {
+                System.out.println("\nLogin Successfully!");
                 isLoggedIn = true;
 
-            } else if (!loginEmail.equals(email) && !loginPass.equals(password)) {
-                System.out.println("Incorrect email and password. Please try again.");
-                System.out.println("Attempts remaining: " + (3 - maxAttempts));
-            } else if (loginPass.equals(password)) { //Shows when email is incorrect
-                System.out.println("Incorrect email. Please try again.");
-                System.out.println("Attempts remaining: " + (3 - maxAttempts));
-            } else if (loginEmail.equals(email)) { //Shows when password is incorrect
-                System.out.println("Incorrect password. Please try again");
-                System.out.println("Attempts remaining: " + (3 - maxAttempts));
+                break; // break/stop the loop
+
+            } else if (!emailCorrect && !passCorrect) { //email and password are incorrect
+                System.out.println("\nInvalid Username or Password!");
+            } else if (!emailCorrect) { //email is incorrect
+                System.out.println("\nInvalid email! Try again.");
+            } else { //password is incorrect
+                System.out.println("\nInvalid password! Try again.");
             }
-
-            } while (!isLoggedIn && maxAttempts < 3) ;//Limit the attempts to 3
-
-            if (!isLoggedIn) {
-                System.out.println("You ran out of attempts.");
-            }
-
-            scanner.close();
-
         }
 
-
+        if (!isLoggedIn) {
+            System.out.println("\nAccount Locked. Too many attempts");
+        }
 
     }
-
-
+}
