@@ -10,7 +10,7 @@ public class UserAccount {
     private String password;
 
 
-    //constructor
+    //parameterized constructor
     public UserAccount (String firstName, String middleName, String lastName,
                         String address, String email, String password) {
         this.firstName = firstName;
