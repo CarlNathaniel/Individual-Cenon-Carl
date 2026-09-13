@@ -1,0 +1,12 @@
+package com.joysistvi.stage2.discussion.day21;
+
+public class FinalKeyword {
+
+    final double PI = 3.14;
+
+    public final void jump(){}
+
+}
+
+// final, static, abstract -> non-access modifiers (cannot be override)
+// final in other language is const (C++)

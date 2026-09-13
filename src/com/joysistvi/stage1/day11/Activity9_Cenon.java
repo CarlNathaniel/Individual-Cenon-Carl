@@ -32,7 +32,6 @@ public class Activity9_Cenon {
 
             System.out.print("\nName of Student " + (i + 1) + ": ");
             studentNames[i] = input.next();
-
             System.out.println("Enter grades for each subject:");
 
             for (int j = 0; j < subjects; j++) {
@@ -42,7 +41,6 @@ public class Activity9_Cenon {
         }
 
         System.out.println("\nGrades Report");
-
         System.out.printf("%-20s", "Student");
 
         for (int i = 0; i < subjects; i++) {
@@ -51,11 +49,9 @@ public class Activity9_Cenon {
 
         System.out.println("Average");
 
-
         for (int i = 0; i < students; i++) {
 
             System.out.printf("%-20s", studentNames[i]);
-
             double sum = 0;
 
             for (int j = 0; j < subjects; j++) {
@@ -64,7 +60,6 @@ public class Activity9_Cenon {
             }
 
             double average = sum / subjects;
-
             System.out.printf("%.2f%n", average);
         }
 

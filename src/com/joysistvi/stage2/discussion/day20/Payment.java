@@ -14,3 +14,5 @@ public class Payment {
     }
 
 }
+
+// public, protected, default, private
