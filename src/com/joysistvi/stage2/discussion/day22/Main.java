@@ -6,9 +6,14 @@ public class Main {
 
         // Single Inheritance: GCashPayment extends Payment
         // Initiator                Constructor
-        Payment gcashPayment = new GCashPayment(1000,500);
+        GCashPayment gcashPayment = new GCashPayment(1000,500);
 
         gcashPayment.printReceipt(250);
+
+
+//        gcashPayment.refund(500);
+//        String txnId = gcashPayment.generateTransactionId();
+//        gcashPayment.logTransaction(txnId);
 
         // Multiple Inheritance
         // #1 - Refundable
